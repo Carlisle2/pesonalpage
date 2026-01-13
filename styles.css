@@ -9,148 +9,20 @@ body {
     font-family: "Microsoft YaHei", sans-serif;
     line-height: 1.6;
     position: relative;
+    background-color: #f5f5f5;
 }
 
-/* 导航栏 */
+/* 导航栏 - 重新设计为移动优先 */
 .nav {
     width: 100%;
-    height: 60px;
     background-color: #D4B5B6;
-}
-
-/* 主要内容区 */
-.content {
-    width: 100%;
-    min-height: calc(100vh - 220px);
-    background-image: url('images/background.jpg');
-    background-repeat: no-repeat;
-    background-position: center top;
-    background-size: cover;
-}
-
-.content-inner {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    overflow: hidden;
-    padding: 20px;
-}
-
-/* 左侧区域 */
-.left-section {
-    float: left;
-    width: 300px;
-}
-
-.photo-container {
-    width: 100%;
-    height: 388px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    background-color: #fff;
-}
-
-.photo-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-}
-
-.info-container {
-    width: 100%;
-    background-color: #D4B5B6;
-    padding: 25px;
-}
-
-.info-list {
-    list-style: none;
-}
-
-.info-list li {
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-/* 右侧区域 */
-.right-section {
-    float: right;
-    width: 840px;
-}
-
-.intro-section {
-    background-color: #E8DCDC;
-    padding: 30px;
-    margin-bottom: 20px;
-}
-
-.intro-section h2,
-.skills-section h2 {
-    margin-bottom: 20px;
-    font-size: 22px;
-    font-weight: 500;
-}
-
-.intro-section p {
-    line-height: 1.8;
-    text-indent: 2em;
-    color: #444;
-}
-
-.skills-section {
-    background-color: #E8DCDC;
-    padding: 30px;
-}
-
-.skills-container {
-    overflow: hidden;
-}
-
-.skill-item {
-    float: left;
-    width: 245px;
-    height: 195px;
-    overflow: hidden;
-    margin-right: 20px;
-}
-
-.skill-item:last-child {
-    margin-right: 0;
-}
-
-.skill-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.skill-description h3 {
-    margin-bottom: 20px;
-    font-size: 18px;
-    font-weight: 500;
-}
-
-.skill-description p {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #555;
-    margin-bottom: 16px;
-    padding-left: 20px;
     position: relative;
-}
-
-.skill-description p::before {
-    content: "•";
-    color: #ff6b6b;
-    font-size: 18px;
-    position: absolute;
-    left: 0;
 }
 
 /* 顶部图片 */
 .top-image {
     width: 100%;
-    height: 160px;
+    height: 180px;
     overflow: hidden;
 }
 
@@ -161,81 +33,273 @@ body {
     display: block;
 }
 
-/* 响应式设计 */
+/* 主要内容区 */
+.content {
+    width: 100%;
+    min-height: calc(100vh - 240px);
+    background-image: url('images/background.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 20px 0;
+}
 
-/* 平板设备竖屏 (768px以下) */
-@media screen and (max-width: 768px) {
-    .nav {
-        height: auto;
-    }
-    
-    .nav-list {
-        padding: 0;
-    }
-    
-    .nav-item {
-        width: 100%;
-        float: none;
-        line-height: 50px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    }
-    
-    .nav-item:last-child {
-        border-bottom: none;
-    }
-    section,
-    .right-section {
-        float: none;
-        width: 100%;
+.content-inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* 左侧区域 - 移动优先 */
+.left-section {
+    flex: 1;
+    min-width: 300px;
+    max-width: 100%;
+}
+
+.photo-container {
+    width: 100%;
+    max-width: 300px;
+    height: 388px;
+    overflow: hidden;
+    margin: 0 auto 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.info-container {
+    width: 100%;
+    background-color: #D4B5B6;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.info-list {
+    list-style: none;
+}
+
+.info-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-list li:last-child {
+    border-bottom: none;
+}
+
+.info-list li span:first-child {
+    font-weight: bold;
+    color: #5a4a4a;
+}
+
+/* 右侧区域 */
+.right-section {
+    flex: 2;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.intro-section {
+    background-color: #E8DCDC;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.intro-section h2,
+.skills-section h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #5a4a4a;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #D4B5B6;
+}
+
+.intro-section p {
+    line-height: 1.8;
+    text-indent: 2em;
+    color: #555;
+    font-size: 16px;
+}
+
+/* 技能区域 */
+.skills-section {
+    background-color: #E8DCDC;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+.skill-item {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+}
+
+.skill-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.skill-description h3 {
+    margin: 15px 0 10px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #5a4a4a;
+}
+
+.skill-description p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.skill-description p::before {
+    content: "•";
+    color: #ff6b6b;
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+/* ========== 响应式设计 ========== */
+
+/* 平板设备 (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+    .content-inner {
+        padding: 0 20px;
     }
     
     .left-section {
-        margin-bottom: 20px;
+        flex: 1;
+        max-width: 280px;
+    }
+    
+    .right-section {
+        flex: 2;
+        min-width: calc(100% - 300px);
     }
     
     .photo-container {
-        max-width: 300px;
-        margin: 0 auto 20px;
+        height: 350px;
+    }
+    
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .top-image {
+        height: 160px;
+    }
+}
+
+/* 中等平板/大手机 (601px - 768px) */
+@media screen and (max-width: 768px) {
+    .content-inner {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .left-section,
+    .right-section {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .photo-container {
+        max-width: 250px;
+        height: 320px;
+    }
+    
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .skill-item img {
+        height: 160px;
+    }
+    
+    .nav-list {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .nav-item {
+        flex: 0 0 auto;
+        min-width: 100px;
+    }
+    
+    .nav-item a {
+        padding: 15px 10px;
+        font-size: 15px;
+        white-space: nowrap;
+    }
+    
+    .top-image {
+        height: 140px;
+    }
+}
+
+/* 手机设备 (480px - 600px) */
+@media screen and (max-width: 600px) {
+    .content {
+        padding: 15px 0;
+        min-height: calc(100vh - 200px);
+    }
+    
+    .content-inner {
+        padding: 0 15px;
+        gap: 20px;
+    }
+    
+    .photo-container {
+        max-width: 200px;
+        height: 260px;
     }
     
     .intro-section,
     .skills-section {
         padding: 20px;
-    }
-    
-    .skill-item {
-        width: 100%;
-        float: none;
-        margin-right: 0;
-        margin-bottom: 20px;
-    }
-    
-    .skill-item:last-child {
-        margin-bottom: 0;
-    }
-    
-    .top-image {
-        height: 120px;
-    }
-}
-    .nav-item a {
-        font-size: 16px;
-    }
-    
-    .content {
-        min-height: calc(100vh - 280px);
-    }
-    
-    .content-inner {
-        padding: 10px;
-    }
-    
-    .left-
-
-/* 手机设备 (480px以下) */
-@media screen and (max-width: 480px) {
-    .content-inner {
-        padding: 10px;
     }
     
     .intro-section h2,
@@ -246,29 +310,110 @@ body {
     
     .intro-section p {
         font-size: 15px;
-        line-height: 1.6;
+        line-height: 1.7;
     }
     
-    .skill-item {
-        height: 160px;
+    .skill-item img {
+        height: 140px;
     }
     
     .skill-description h3 {
-        font-size: 16px;
-        margin-bottom: 15px;
+        font-size: 17px;
     }
     
     .skill-description p {
         font-size: 14px;
-        line-height: 1.5;
     }
     
     .info-container {
         padding: 15px;
     }
     
+    .info-list li {
+        font-size: 15px;
+        padding: 10px 0;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .nav-item a {
+        padding: 12px 8px;
+        font-size: 14px;
+    }
+    
+    .top-image {
+        height: 120px;
+    }
+}
+
+/* 小屏手机 (480px以下) */
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 15px;
+    }
+    
+    .content {
+        padding: 10px 0;
+        background-attachment: scroll; /* 移动端禁用fixed背景 */
+    }
+    
+    .content-inner {
+        padding: 0 10px;
+        gap: 15px;
+    }
+    
     .photo-container {
-        height: 320px;
+        max-width: 180px;
+        height: 230px;
+    }
+    
+    .intro-section,
+    .skills-section {
+        padding: 15px;
+    }
+    
+    .intro-section h2,
+    .skills-section h2 {
+        font-size: 18px;
+    }
+    
+    .intro-section p {
+        font-size: 14px;
+        line-height: 1.6;
+        text-indent: 1.5em;
+    }
+    
+    .skill-item img {
+        height: 120px;
+    }
+    
+    .skill-description h3 {
+        font-size: 16px;
+        margin: 10px 0 8px;
+    }
+    
+    .skill-description p {
+        font-size: 13px;
+        margin-bottom: 8px;
+        padding-left: 18px;
+    }
+    
+    .info-container {
+        padding: 12px;
+    }
+    
+    .info-list li {
+        font-size: 14px;
+        padding: 8px 0;
+    }
+    
+    .nav-item {
+        min-width: 80px;
+    }
+    
+    .nav-item a {
+        padding: 10px 5px;
+        font-size: 13px;
     }
     
     .top-image {
@@ -276,3 +421,56 @@ body {
     }
 }
 
+/* 超小屏手机 (360px以下) */
+@media screen and (max-width: 360px) {
+    .photo-container {
+        max-width: 160px;
+        height: 200px;
+    }
+    
+    .intro-section,
+    .skills-section {
+        padding: 12px;
+    }
+    
+    .intro-section h2,
+    .skills-section h2 {
+        font-size: 17px;
+    }
+    
+    .intro-section p {
+        font-size: 13px;
+    }
+    
+    .skill-item img {
+        height: 100px;
+    }
+    
+    .info-container {
+        padding: 10px;
+    }
+    
+    .nav-item a {
+        font-size: 12px;
+        padding: 8px 4px;
+    }
+    
+    .top-image {
+        height: 80px;
+    }
+}
+
+/* 横屏模式 */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .content {
+        min-height: auto;
+    }
+    
+    .photo-container {
+        height: 200px;
+    }
+    
+    .top-image {
+        height: 100px;
+    }
+}
